@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>拾词 · 四级学习卡</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+<main class="shell">
+  <header><div class="brand"><span class="mark">拾</span><div><strong>拾词</strong><small>为四级留一点时间</small></div></div><span class="local">数据保存在此浏览器</span></header>
+  <section class="intro"><div><p class="eyebrow">CET-4 VOCABULARY</p><h1>每天认识一点新词。</h1><p>先想一想，再翻面。学会的词，可以收进已掌握。</p></div><div class="stats"><span>已掌握</span><strong id="masteredCount">0</strong><span id="totalLabel">个单词</span></div></section>
+  <section class="workspace" aria-label="单词学习">
+    <div class="toolbar"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="查找英文单词" aria-label="查找英文单词"></label><select id="order" aria-label="单词排序"><option value="frequency">参考词频优先</option><option value="source">词表原顺序</option><option value="alpha">字母顺序</option></select><select id="filter" aria-label="筛选状态"><option value="all">全部单词</option><option value="unlearned">未掌握</option><option value="mastered">已掌握</option></select></div>
+    <div class="import-row"><label for="importFile">导入本地词表（JSON）</label><input id="importFile" type="file" accept=".json,application/json"><p>词表只在当前浏览器读取和保存，不会上传。可导入本地版导出的词表。</p></div>
+    <div class="progress"><span id="position">准备中</span><span id="frequency"></span></div>
+    <button class="card" id="card" type="button" aria-label="翻转单词卡"><span class="card-hint" id="sideHint">想想它的意思</span><span id="cardWord" class="word"></span><span id="phonetic" class="phonetic"></span><span id="meaning" class="meaning" hidden></span><span class="card-bottom" id="cardBottom">点击翻面 · 空格键</span></button>
+    <p id="message" class="message" role="status"></p>
+    <div class="actions"><button id="prev" class="secondary">← 上一个</button><button id="flip" class="primary">查看释义</button><button id="next" class="secondary">下一个 →</button></div>
+    <div class="below"><button id="master" class="text-button">☆ 标记为已掌握</button><button id="shuffle" class="text-button">↝ 随机学习</button></div>
+  </section>
+  <footer>← → 切换 · 空格翻面 · 词表和学习状态只保存在当前浏览器<br>程序不自带词表；请导入自己有权使用的 JSON 文件。</footer>
+</main>
+</body></html>

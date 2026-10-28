@@ -1,2 +1,23 @@
-# shici-flashcards
-A browser-based flashcard app with local-only vocabulary import.
+# 拾词 Shici
+
+一个在浏览器里运行的单词卡工具。支持查找、翻面、排序、随机学习和标记已掌握。
+
+## 使用
+
+打开 `index.html`，选择“导入本地词表”，选取 JSON 文件。词表不会上传到服务器；浏览器的本地存储用于保存词表和已掌握状态。清理浏览器数据、更换浏览器或设备时，这些数据不会自动同步。
+
+词表文件是 JSON 数组，示例：
+
+```json
+[{"word":"hello","meaning":"你好","phonetic":"həˈloʊ","frequency":null}]
+```
+
+`word` 和 `meaning` 必填；`phonetic` 和 `frequency` 可省略。词频按输入数据排序，并非本程序提供的考试统计。导入新词表会替换当前浏览器中存储的词表。
+
+## 本地运行
+
+下载项目后直接打开 `index.html`，或在目录中运行 `python -m http.server 8000` 并访问 `http://localhost:8000`。无需依赖、账号或后端。
+
+## 数据和权限
+
+本仓库不包含词典、试题或词表。请只导入你有权使用的内容。浏览器存储容量由浏览器决定；无痕模式或受限制的浏览器可能无法长期保存数据。
